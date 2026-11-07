@@ -2,6 +2,7 @@
 
 ## What to build
 - Replace the placeholder home page with a polished, French-language CAFIRM consulting website using the supplied blue and white logos.
+- Lead the home page with credibility: expertise and key figures, with “Prendre rendez-vous” prominent; keep foreign investment in its own lower section.
 - Create the requested pages: home, cabinet, services, four service details, Morocco investment, news, six articles, appointment, contact, legal notices, privacy policy, and not-found.
 - Add a shared responsive header/footer, mobile navigation, appointment and WhatsApp calls to action, client-side forms, FAQs, search and category filters, and the specified French content.
 - Establish the navy, ivory, and restrained gold visual system, Cormorant Garamond/Inter typography, subtle Moroccan star pattern, motion, supplied branding, and favicon.
