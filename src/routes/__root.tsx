@@ -12,7 +12,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { SiteFooter, SiteHeader } from "../components/cafirm/site-shell";
 
 function NotFoundComponent() {
   return (
@@ -122,11 +121,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteHeader />
-      <main id="contenu">
-        <Outlet />
-      </main>
-      <SiteFooter />
+      <Outlet />
     </QueryClientProvider>
   );
 }
