@@ -1,24 +1,43 @@
-# Pixel Perfect Replica
+# CAFIRM — Site vitrine
 
-Implement exactly the screenshot and nothing else
+Site multi-pages du cabinet comptable et fiscal CAFIRM (Casablanca).
+Frontend uniquement : React 18 + Vite 6 + TypeScript + Tailwind CSS v4 + Framer Motion.
 
-This project was built with [Lovable](https://lovable.dev).
+## Démarrer
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ca740022-0cc9-4964-a3c5-ebbb0a6215d2).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+```bash
+npm install
+npm run dev        # http://localhost:5173
 ```
+
+## Build de production
+
+```bash
+npm run build      # type-check + build dans dist/
+npm run preview    # prévisualiser le build
+```
+
+## Où modifier le contenu
+
+| Fichier | Contenu |
+| --- | --- |
+| `src/config/site.ts` | Coordonnées, horaires, chiffres clés, dirigeant, témoignages, réseaux sociaux, mentions légales |
+| `src/data/services.ts` | Les 4 services (checklists, processus, FAQ, articles liés) |
+| `src/data/posts.ts` | Les articles du blog (catégories, contenu riche par sections) |
+
+## Pages
+
+`/` · `/le-cabinet` · `/services` · `/services/:slug` · `/investir-au-maroc` · `/actualites` ·
+`/actualites/:slug` · `/prendre-rendez-vous` (pré-sélection via `?service=...`) · `/contact` ·
+`/mentions-legales` · `/politique-de-confidentialite` · 404
+
+## Notes
+
+- Les formulaires (react-hook-form + zod) n'envoient rien à un serveur : à la validation,
+  un message pré-rédigé s'ouvre dans WhatsApp.
+- SEO : balises par page, Open Graph, JSON-LD (AccountingService, Article, FAQPage),
+  `public/sitemap.xml`, `public/robots.txt`.
+- Les logos (`public/logo-cafirm-navy.png`, `public/logo-cafirm-white.png`), le favicon et
+  l'image Open Graph ont été générés à partir du logo blanc fourni.
+- Déploiement SPA : configurer la réécriture de toutes les routes vers `index.html`
+  (Netlify `_redirects`, Vercel `rewrites`, etc.).

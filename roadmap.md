@@ -1,3 +1,0 @@
-- [ ] Complete CAFIRM shared layout and homepage.
-- [ ] Add requested service, investment, news, article, contact, appointment, and legal pages.
-- [ ] Verify all routes, metadata, navigation, forms, and preview output.
