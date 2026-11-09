@@ -14,4 +14,25 @@ describe("App routing", () => {
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
   });
+
+  it("registers every requested CAFIRM content page", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    const paths = [
+      "/le-cabinet",
+      "/services",
+      "/services/tenue-comptable",
+      "/investir-au-maroc",
+      "/actualites",
+      "/actualites/creer-societe-maroc-etapes",
+      "/prendre-rendez-vous",
+      "/contact",
+      "/mentions-legales",
+      "/politique-de-confidentialite",
+    ];
+
+    for (const path of paths) {
+      const matches = router.matchRoutes(path);
+      expect(matches.at(-1)?.routeId, path).not.toBe(rootRouteId);
+    }
+  });
 });

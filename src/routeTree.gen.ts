@@ -10,33 +10,168 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as InvestirAuMarocRouteImport } from './routes/investir-au-maroc'
+import { Route as LeCabinetRouteImport } from './routes/le-cabinet'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as PolitiqueDeConfidentialiteRouteImport } from './routes/politique-de-confidentialite'
+import { Route as PrendreRendezVousRouteImport } from './routes/prendre-rendez-vous'
+import { Route as ActualitesIndexRouteImport } from './routes/actualites.index'
+import { Route as ActualitesSlugRouteImport } from './routes/actualites.$slug'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestirAuMarocRoute = InvestirAuMarocRouteImport.update({
+  id: '/investir-au-maroc',
+  path: '/investir-au-maroc',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeCabinetRoute = LeCabinetRouteImport.update({
+  id: '/le-cabinet',
+  path: '/le-cabinet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitiqueDeConfidentialiteRoute =
+  PolitiqueDeConfidentialiteRouteImport.update({
+    id: '/politique-de-confidentialite',
+    path: '/politique-de-confidentialite',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PrendreRendezVousRoute = PrendreRendezVousRouteImport.update({
+  id: '/prendre-rendez-vous',
+  path: '/prendre-rendez-vous',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActualitesIndexRoute = ActualitesIndexRouteImport.update({
+  id: '/actualites/',
+  path: '/actualites/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActualitesSlugRoute = ActualitesSlugRouteImport.update({
+  id: '/actualites/$slug',
+  path: '/actualites/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSlugRoute = ServicesSlugRouteImport.update({
+  id: '/services/$slug',
+  path: '/services/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/investir-au-maroc': typeof InvestirAuMarocRoute
+  '/le-cabinet': typeof LeCabinetRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
+  '/prendre-rendez-vous': typeof PrendreRendezVousRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/actualites/': typeof ActualitesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/investir-au-maroc': typeof InvestirAuMarocRoute
+  '/le-cabinet': typeof LeCabinetRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
+  '/prendre-rendez-vous': typeof PrendreRendezVousRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/actualites': typeof ActualitesIndexRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/investir-au-maroc': typeof InvestirAuMarocRoute
+  '/le-cabinet': typeof LeCabinetRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
+  '/prendre-rendez-vous': typeof PrendreRendezVousRoute
+  '/actualites/$slug': typeof ActualitesSlugRoute
+  '/services/$slug': typeof ServicesSlugRoute
+  '/actualites/': typeof ActualitesIndexRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/investir-au-maroc'
+    | '/le-cabinet'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
+    | '/prendre-rendez-vous'
+    | '/actualites/$slug'
+    | '/services/$slug'
+    | '/actualites/'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/investir-au-maroc'
+    | '/le-cabinet'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
+    | '/prendre-rendez-vous'
+    | '/actualites/$slug'
+    | '/services/$slug'
+    | '/actualites'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/investir-au-maroc'
+    | '/le-cabinet'
+    | '/mentions-legales'
+    | '/politique-de-confidentialite'
+    | '/prendre-rendez-vous'
+    | '/actualites/$slug'
+    | '/services/$slug'
+    | '/actualites/'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  InvestirAuMarocRoute: typeof InvestirAuMarocRoute
+  LeCabinetRoute: typeof LeCabinetRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PolitiqueDeConfidentialiteRoute: typeof PolitiqueDeConfidentialiteRoute
+  PrendreRendezVousRoute: typeof PrendreRendezVousRoute
+  ActualitesSlugRoute: typeof ActualitesSlugRoute
+  ServicesSlugRoute: typeof ServicesSlugRoute
+  ActualitesIndexRoute: typeof ActualitesIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +183,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investir-au-maroc': {
+      id: '/investir-au-maroc'
+      path: '/investir-au-maroc'
+      fullPath: '/investir-au-maroc'
+      preLoaderRoute: typeof InvestirAuMarocRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/le-cabinet': {
+      id: '/le-cabinet'
+      path: '/le-cabinet'
+      fullPath: '/le-cabinet'
+      preLoaderRoute: typeof LeCabinetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-de-confidentialite': {
+      id: '/politique-de-confidentialite'
+      path: '/politique-de-confidentialite'
+      fullPath: '/politique-de-confidentialite'
+      preLoaderRoute: typeof PolitiqueDeConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prendre-rendez-vous': {
+      id: '/prendre-rendez-vous'
+      path: '/prendre-rendez-vous'
+      fullPath: '/prendre-rendez-vous'
+      preLoaderRoute: typeof PrendreRendezVousRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/': {
+      id: '/actualites/'
+      path: '/actualites'
+      fullPath: '/actualites/'
+      preLoaderRoute: typeof ActualitesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/actualites/$slug': {
+      id: '/actualites/$slug'
+      path: '/actualites/$slug'
+      fullPath: '/actualites/$slug'
+      preLoaderRoute: typeof ActualitesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/$slug': {
+      id: '/services/$slug'
+      path: '/services/$slug'
+      fullPath: '/services/$slug'
+      preLoaderRoute: typeof ServicesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  InvestirAuMarocRoute: InvestirAuMarocRoute,
+  LeCabinetRoute: LeCabinetRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  PolitiqueDeConfidentialiteRoute: PolitiqueDeConfidentialiteRoute,
+  PrendreRendezVousRoute: PrendreRendezVousRoute,
+  ActualitesSlugRoute: ActualitesSlugRoute,
+  ServicesSlugRoute: ServicesSlugRoute,
+  ActualitesIndexRoute: ActualitesIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

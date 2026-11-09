@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+Keep public pages as thin TanStack file routes with page-specific metadata, rendering reusable CAFIRM views from `src/components/cafirm-site.tsx` so navigation and SEO stay aligned.
