@@ -2,7 +2,7 @@
  * Registre des photos du site.
  *
  * Les fichiers sont dans public/images/photos/, en WebP, déclinés en plusieurs
- * largeurs : `<nom>-<largeur>.webp` (ex. reunion-conseil-800.webp).
+ * largeurs : `<nom>-<largeur>.webp` (ex. bureau-reunion-800.webp).
  *
  * Pour remplacer une photo (par exemple par une vraie photo des bureaux ou de
  * l'équipe) : déposer les nouveaux fichiers sous le même nom, puis ajuster
@@ -31,11 +31,6 @@ const photo = (file: string, alt: string, source: string, ratio = 1.5, widths = 
 
 export const photos = {
   /* ── Ambiance cabinet ── */
-  reunionConseil: photo(
-    "reunion-conseil",
-    "Réunion de travail autour d'une table : prise de notes lors d'un rendez-vous de conseil",
-    "images.unsplash.com/photo-1517048676732-d65bc937f952",
-  ),
   bureauReunion: photo(
     "bureau-reunion",
     "Salle de réunion lumineuse avec grande table et baies vitrées",
@@ -58,11 +53,6 @@ export const photos = {
   ),
 
   /* ── Maroc ── */
-  zelligeFontaine: photo(
-    "zellige-fontaine",
-    "Fontaine marocaine en zellige et stuc sculpté",
-    "images.unsplash.com/photo-1539020140153-e479b8c22e70",
-  ),
   casablancaCorniche: photo(
     "casablanca-corniche",
     "La corniche de Casablanca et le phare d'El Hank face à l'océan Atlantique",

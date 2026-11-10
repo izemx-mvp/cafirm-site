@@ -11,11 +11,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Star8 } from "@/components/decor/Star8";
 import { ZelligeGrid } from "@/components/decor/ZelligeGrid";
 import { HeroStars } from "@/components/decor/HeroStars";
-import { HeroPhotos } from "@/components/decor/HeroPhotos";
+import { DocumentCards } from "@/components/decor/DocumentCards";
 import { MoroccoMap } from "@/components/decor/MoroccoMap";
 import { PostCard } from "@/components/cards/PostCard";
 import { Photo } from "@/components/ui/Photo";
-import { Float } from "@/components/ui/Float";
 
 export function Home() {
   return (
@@ -30,7 +29,7 @@ export function Home() {
       {/* ───── Hero ───── */}
       <section className="relative overflow-hidden bg-ivory">
         <ZelligeGrid className="pointer-events-none absolute inset-0 h-full w-full" opacity={0.06} />
-        <HeroStars className="pointer-events-none absolute -right-24 top-0 hidden h-full w-[55%] opacity-60 lg:block" />
+        <HeroStars className="pointer-events-none absolute -right-24 top-0 hidden h-full w-[55%] lg:block" />
         <div className="container-site relative grid items-center gap-14 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-24">
           <div>
             <Reveal>
@@ -65,7 +64,7 @@ export function Home() {
             </Reveal>
           </div>
           <Reveal delay={0.25}>
-            <HeroPhotos />
+            <DocumentCards />
           </Reveal>
         </div>
       </section>
@@ -177,37 +176,8 @@ export function Home() {
               </Button>
             </Reveal>
           </div>
-          <Reveal delay={0.2} className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <Float
-              duration={8}
-              delta={8}
-              className="relative aspect-[4/3] overflow-hidden rounded-md border border-gold/30 bg-steel lg:aspect-[5/4]"
-            >
-              <Photo
-                name="casablancaCorniche"
-                sizes="(min-width: 1024px) 560px, (min-width: 640px) 448px, 100vw"
-                position="30% 55%"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-navy via-navy/10 to-transparent" aria-hidden="true" />
-              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 lg:p-8">
-                <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-gold">
-                  <Star8 className="h-3 w-3" />
-                  Casablanca
-                </p>
-                <p className="mt-2 font-display text-lg font-semibold leading-snug text-white sm:text-2xl lg:text-[1.7rem]">
-                  Capitale économique du Royaume, porte d'entrée vers l'Afrique
-                </p>
-              </div>
-            </Float>
-            {/* Carte du Maroc en médaillon : se dessine à l'apparition, puis flotte */}
-            <Float
-              duration={6.5}
-              delta={10}
-              className="absolute -right-2 -top-8 hidden w-40 rounded-md border border-gold/30 bg-navy/95 p-3 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.6)] sm:block lg:-right-4 lg:w-48"
-            >
-              <MoroccoMap className="h-auto w-full" />
-            </Float>
+          <Reveal delay={0.2} className="mx-auto w-full max-w-sm lg:max-w-md">
+            <MoroccoMap className="h-auto w-full" />
           </Reveal>
         </div>
       </section>
