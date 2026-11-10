@@ -54,7 +54,6 @@ export const site = {
     name: "Omar Chbihi Hessani",
     initials: "OC",
     title: "Expert-comptable, fondateur & gérant",
-    bio: "Diplômé de l'ISCAE Casablanca et titulaire du diplôme national d'expert-comptable, Omar Chbihi Hessani a exercé huit ans au sein d'un cabinet d'audit international avant de fonder CAFIRM en 2012. Il accompagne aujourd'hui dirigeants de PME et investisseurs étrangers dans leurs décisions comptables, fiscales et stratégiques.",
   },
 
   figures: [

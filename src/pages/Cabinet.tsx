@@ -124,7 +124,6 @@ export function Cabinet() {
                 situation, l'anticipation de ses échéances et un avis honnête, même quand il dérange. »
               </p>
             </blockquote>
-            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-white/60">{site.manager.bio}</p>
           </Reveal>
         </div>
       </section>
