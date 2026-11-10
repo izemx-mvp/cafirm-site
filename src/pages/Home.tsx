@@ -15,6 +15,7 @@ import { HeroPhotos } from "@/components/decor/HeroPhotos";
 import { MoroccoMap } from "@/components/decor/MoroccoMap";
 import { PostCard } from "@/components/cards/PostCard";
 import { Photo } from "@/components/ui/Photo";
+import { Float } from "@/components/ui/Float";
 
 export function Home() {
   return (
@@ -177,7 +178,11 @@ export function Home() {
             </Reveal>
           </div>
           <Reveal delay={0.2} className="relative mx-auto w-full max-w-md lg:max-w-none">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-gold/30 bg-steel lg:aspect-[5/4]">
+            <Float
+              duration={8}
+              delta={8}
+              className="relative aspect-[4/3] overflow-hidden rounded-md border border-gold/30 bg-steel lg:aspect-[5/4]"
+            >
               <Photo
                 name="casablancaCorniche"
                 sizes="(min-width: 1024px) 560px, (min-width: 640px) 448px, 100vw"
@@ -194,11 +199,15 @@ export function Home() {
                   Capitale économique du Royaume, porte d'entrée vers l'Afrique
                 </p>
               </div>
-            </div>
-            {/* Carte du Maroc en médaillon */}
-            <div className="absolute -right-2 -top-6 hidden w-36 rounded-md border border-gold/30 bg-navy/95 p-3 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.6)] sm:block lg:-right-4 lg:w-40">
+            </Float>
+            {/* Carte du Maroc en médaillon : se dessine à l'apparition, puis flotte */}
+            <Float
+              duration={6.5}
+              delta={10}
+              className="absolute -right-2 -top-8 hidden w-40 rounded-md border border-gold/30 bg-navy/95 p-3 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.6)] sm:block lg:-right-4 lg:w-48"
+            >
               <MoroccoMap className="h-auto w-full" />
-            </div>
+            </Float>
           </Reveal>
         </div>
       </section>
