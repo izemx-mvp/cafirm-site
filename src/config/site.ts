@@ -46,15 +46,15 @@ export const site = {
     patente: "TP 34502189",
     cnss: "CNSS 7893456",
     capital: "500 000 MAD",
-    publisher: "Youssef El Amrani",
+    publisher: "Omar Chbihi Hessani",
     host: "OVHcloud — 2 rue Kellermann, 59100 Roubaix, France — www.ovhcloud.com",
   },
 
   manager: {
-    name: "Youssef El Amrani",
-    initials: "YE",
+    name: "Omar Chbihi Hessani",
+    initials: "OC",
     title: "Expert-comptable, fondateur & gérant",
-    bio: "Diplômé de l'ISCAE Casablanca et titulaire du diplôme national d'expert-comptable, Youssef El Amrani a exercé huit ans au sein d'un cabinet d'audit international avant de fonder CAFIRM en 2012. Il accompagne aujourd'hui dirigeants de PME et investisseurs étrangers dans leurs décisions comptables, fiscales et stratégiques.",
+    bio: "Diplômé de l'ISCAE Casablanca et titulaire du diplôme national d'expert-comptable, Omar Chbihi Hessani a exercé huit ans au sein d'un cabinet d'audit international avant de fonder CAFIRM en 2012. Il accompagne aujourd'hui dirigeants de PME et investisseurs étrangers dans leurs décisions comptables, fiscales et stratégiques.",
   },
 
   figures: [
