@@ -1,7 +1,11 @@
+import type { PhotoKey } from "./photos";
+
 export interface Service {
   slug: string;
   number: string;
   name: string;
+  /** Photo d'illustration (registre src/data/photos.ts) */
+  photo: PhotoKey;
   menuHint: string;
   tagline: string;
   excerpt: string;
@@ -18,6 +22,7 @@ export const services: Service[] = [
   {
     slug: "tenue-comptable",
     number: "01",
+    photo: "serviceTenueComptable",
     name: "Tenue comptable",
     menuHint: "Comptabilité fiable, reporting mensuel clair",
     tagline: "Des comptes tenus au cordeau, un reporting qui éclaire vos décisions.",
@@ -95,6 +100,7 @@ export const services: Service[] = [
   {
     slug: "fiscalite-declarations",
     number: "02",
+    photo: "serviceFiscalite",
     name: "Fiscalité & déclarations",
     menuHint: "IS, IR, TVA : conformité et optimisation légale",
     tagline: "Payer le juste impôt : ni plus, ni moins, et toujours dans les délais.",
@@ -172,6 +178,7 @@ export const services: Service[] = [
   {
     slug: "creation-entreprise",
     number: "03",
+    photo: "serviceCreation",
     name: "Création d'entreprise",
     menuHint: "De l'idée à l'immatriculation, clé en main",
     tagline: "Votre société immatriculée en quelques jours, sur des fondations juridiques saines.",
@@ -249,6 +256,7 @@ export const services: Service[] = [
   {
     slug: "conseil-assistance-administrative",
     number: "04",
+    photo: "serviceConseil",
     name: "Conseil & assistance administrative",
     menuHint: "Paie, CNSS, juridique courant, relations administration",
     tagline: "Un bras droit administratif pour que vous restiez concentré sur votre métier.",

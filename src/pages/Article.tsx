@@ -8,6 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Star8 } from "@/components/decor/Star8";
 import { ArticleCover } from "@/components/decor/ArticleCover";
+import { Photo } from "@/components/ui/Photo";
 import { PostCard, formatDate } from "@/components/cards/PostCard";
 import { NotFound } from "./NotFound";
 
@@ -78,8 +79,17 @@ export function Article() {
               {post.title}
             </h1>
           </Reveal>
-          <Reveal delay={0.15} className="mt-10 overflow-hidden rounded-md border border-line">
-            <ArticleCover category={post.category} className="h-56 w-full sm:h-72 lg:h-96" />
+          <Reveal delay={0.15} className="mt-10 overflow-hidden rounded-md border border-line bg-navy">
+            {post.cover ? (
+              <Photo
+                name={post.cover}
+                priority
+                sizes="(min-width: 1216px) 1136px, 100vw"
+                className="h-56 w-full object-cover sm:h-72 lg:h-[26rem]"
+              />
+            ) : (
+              <ArticleCover category={post.category} className="h-56 w-full sm:h-72 lg:h-96" />
+            )}
           </Reveal>
         </div>
       </section>

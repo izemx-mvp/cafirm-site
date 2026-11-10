@@ -7,6 +7,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { PostCard, formatDate } from "@/components/cards/PostCard";
 import { ArticleCover } from "@/components/decor/ArticleCover";
+import { Photo } from "@/components/ui/Photo";
 
 const filters: { value: Category | "all"; label: string }[] = [
   { value: "all", label: "Tous les articles" },
@@ -92,11 +93,19 @@ export function Actualites() {
                 to={`/actualites/${featured.slug}`}
                 className="card-lift group grid overflow-hidden rounded-md border border-line bg-white lg:grid-cols-2"
               >
-                <div className="relative overflow-hidden">
-                  <ArticleCover
-                    category={featured.category}
-                    className="h-56 w-full transition-transform duration-500 group-hover:scale-[1.03] lg:h-full"
-                  />
+                <div className="relative overflow-hidden bg-navy lg:min-h-[340px]">
+                  {featured.cover ? (
+                    <Photo
+                      name={featured.cover}
+                      sizes="(min-width: 1216px) 568px, (min-width: 1024px) 50vw, 100vw"
+                      className="h-56 w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] sm:h-72 lg:absolute lg:inset-0 lg:h-full"
+                    />
+                  ) : (
+                    <ArticleCover
+                      category={featured.category}
+                      className="h-56 w-full transition-transform duration-500 group-hover:scale-[1.03] lg:h-full"
+                    />
+                  )}
                   <span className="absolute left-5 top-5 rounded-[2px] bg-gold px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-white">
                     À la une
                   </span>

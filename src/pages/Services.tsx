@@ -6,18 +6,24 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Star8 } from "@/components/decor/Star8";
 import { starPath } from "@/lib/star";
+import { Photo } from "@/components/ui/Photo";
+import type { PhotoKey } from "@/data/photos";
 
-/** Visuel abstrait par service : grand numéro serif + étoile + filets. */
-function ServiceVisual({ number }: { number: string }) {
+/** Visuel par service : photo, voile navy, grand numéro serif et étoile. */
+function ServiceVisual({ number, photo }: { number: string; photo: PhotoKey }) {
   return (
-    <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-md border border-line bg-navy">
-      <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full" aria-hidden="true">
-        <path d={starPath(330, 60, 90)} stroke="#B8925A" strokeWidth="1" fill="none" opacity="0.4" />
-        <path d={starPath(70, 250, 60)} stroke="#F8F6F1" strokeWidth="0.8" fill="none" opacity="0.2" />
-        <line x1="40" y1="80" x2="150" y2="80" stroke="#B8925A" strokeWidth="1" opacity="0.5" />
-        <line x1="250" y1="230" x2="360" y2="230" stroke="#B8925A" strokeWidth="1" opacity="0.5" />
+    <div className="relative aspect-[4/3] overflow-hidden rounded-md border border-line bg-navy">
+      <Photo
+        name={photo}
+        sizes="(min-width: 1216px) 548px, (min-width: 1024px) 45vw, 100vw"
+        className="h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-linear-to-tr from-navy/90 via-navy/30 to-transparent" aria-hidden="true" />
+      <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+        <path d={starPath(340, 60, 80)} stroke="#B8925A" strokeWidth="1" fill="none" opacity="0.55" />
+        <line x1="40" y1="250" x2="150" y2="250" stroke="#B8925A" strokeWidth="1" opacity="0.6" />
       </svg>
-      <span className="relative font-display text-[7rem] font-semibold leading-none text-white/90">
+      <span className="absolute bottom-10 left-8 font-display text-[5.5rem] font-semibold leading-none text-white/95 sm:text-[6.5rem]">
         {number}
         <Star8 className="absolute -right-7 top-3 h-6 w-6 text-gold" filled />
       </span>
@@ -42,6 +48,7 @@ export function Services() {
           </>
         }
         intro="Chaque service peut être souscrit seul ou combiné en accompagnement global. Dans tous les cas : un interlocuteur dédié, des engagements écrits et des échéances tenues."
+        image="salleConference"
       />
 
       <section className="bg-white py-20 lg:py-28">
@@ -53,7 +60,7 @@ export function Services() {
                   i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
                 }`}
               >
-                <ServiceVisual number={s.number} />
+                <ServiceVisual number={s.number} photo={s.photo} />
                 <div>
                   <p className="flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.28em] text-gold">
                     <Star8 className="h-3 w-3" />

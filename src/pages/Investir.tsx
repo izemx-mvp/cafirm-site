@@ -151,6 +151,8 @@ export function Investir() {
           </>
         }
         intro="De la première visioconférence à votre première liasse fiscale : un partenaire local unique qui structure, crée et gère votre société marocaine — pendant que vous restez concentré sur votre marché."
+        image="mosqueeHassanII"
+        imagePosition="50% 60%"
       >
         <Reveal delay={0.15} className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button to="/prendre-rendez-vous?service=investir-au-maroc">

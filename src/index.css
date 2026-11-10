@@ -96,6 +96,11 @@
     }
   }
 
+  /* Arche marocaine (« bab ») — à utiliser sur un bloc au ratio 4:5 */
+  .arch {
+    border-radius: 50% 50% 4px 4px / 40% 40% 4px 4px;
+  }
+
   /* Glass effect — sticky header only */
   .glass {
     background: rgb(248 246 241 / 0.82);

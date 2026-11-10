@@ -95,6 +95,8 @@ export function Contact() {
           </>
         }
         intro="Téléphone, WhatsApp, e-mail ou visite au cabinet : choisissez le canal qui vous convient. Toute demande reçoit une réponse sous 24 heures ouvrées."
+        image="casablancaCorniche"
+        imagePosition="35% 50%"
       />
 
       {/* Cartes contact */}

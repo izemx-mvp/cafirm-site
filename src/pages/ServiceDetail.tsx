@@ -32,8 +32,8 @@ export function ServiceDetail() {
         jsonLd={faqJsonLd(service.faq)}
       />
 
-      <PageHero label={`${service.number} — Service`} title={service.name} intro={service.tagline}>
-        <Reveal delay={0.15} className="mt-8 flex flex-col gap-3 sm:flex-row">
+      <PageHero label={`${service.number} — Service`} title={service.name} intro={service.tagline} image={service.photo}>
+        <Reveal delay={0.15} className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button to={`/prendre-rendez-vous?service=${service.slug}`}>
             Prendre rendez-vous <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>

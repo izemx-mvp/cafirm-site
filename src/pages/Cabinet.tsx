@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Star8 } from "@/components/decor/Star8";
 import { Monogram } from "@/components/decor/Monogram";
 import { ZelligeGrid } from "@/components/decor/ZelligeGrid";
+import { Photo } from "@/components/ui/Photo";
 
 const differentiators = [
   {
@@ -54,15 +55,28 @@ export function Cabinet() {
           </>
         }
         intro="CAFIRM est né d'une conviction simple : une PME marocaine mérite la même qualité d'expertise qu'un grand groupe — avec la proximité et la réactivité en plus."
+        image="bureauCabinet"
       />
 
       {/* Histoire */}
       <section className="bg-white py-20 lg:py-28">
         <div className="container-site grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-start">
-          <SectionHeading
-            label="Notre histoire"
-            title="De 2012 à aujourd'hui, une croissance par la confiance"
-          />
+          <div>
+            <SectionHeading
+              label="Notre histoire"
+              title="De 2012 à aujourd'hui, une croissance par la confiance"
+            />
+            <Reveal delay={0.1} className="relative mt-10">
+              <div className="absolute -bottom-3 -left-3 h-full w-full rounded-md border border-gold/50" aria-hidden="true" />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-md bg-navy">
+                <Photo
+                  name="zelligeFontaine"
+                  sizes="(min-width: 1024px) 480px, 100vw"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </div>
           <Reveal delay={0.15} className="space-y-5 text-[15px] leading-relaxed text-muted">
             <p>
               CAFIRM a été fondé en {site.founded} à Casablanca par {site.manager.name}, expert-comptable formé à

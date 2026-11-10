@@ -23,7 +23,17 @@ npm run preview    # prévisualiser le build
 | --- | --- |
 | `src/config/site.ts` | Coordonnées, horaires, chiffres clés, dirigeant, témoignages, réseaux sociaux, mentions légales |
 | `src/data/services.ts` | Les 4 services (checklists, processus, FAQ, articles liés) |
-| `src/data/posts.ts` | Les articles du blog (catégories, contenu riche par sections) |
+| `src/data/posts.ts` | Les articles du blog (catégories, photo de couverture, contenu riche par sections) |
+| `src/data/photos.ts` | Registre des photos (fichiers dans `public/images/photos/`, textes alternatifs, sources) |
+
+## Photos
+
+Les photos sont servies en WebP depuis `public/images/photos/`, en deux largeurs
+(`<nom>-800.webp` et `<nom>-1600.webp`) pour le responsive. Elles proviennent
+d'Unsplash (licence Unsplash) et de rawpixel (CC0) : usage commercial libre, sans
+attribution obligatoire. Pour les remplacer par de vraies photos du cabinet,
+déposer les nouveaux fichiers sous le même nom et ajuster `width`, `height` et `alt`
+dans `src/data/photos.ts`.
 
 ## Pages
 
@@ -37,6 +47,7 @@ npm run preview    # prévisualiser le build
   un message pré-rédigé s'ouvre dans WhatsApp.
 - SEO : balises par page, Open Graph, JSON-LD (AccountingService, Article, FAQPage),
   `public/sitemap.xml`, `public/robots.txt`.
+- Le portrait du fondateur reste un monogramme : à remplacer par une vraie photo, pas par une photo stock.
 - Les logos (`public/logo-cafirm-navy.png`, `public/logo-cafirm-white.png`), le favicon et
   l'image Open Graph ont été générés à partir du logo blanc fourni.
 - Déploiement SPA : configurer la réécriture de toutes les routes vers `index.html`

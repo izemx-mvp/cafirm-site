@@ -3,8 +3,8 @@ import type { Category } from "@/data/posts";
 import { starPath, starPoints } from "@/lib/star";
 
 /**
- * Couvertures abstraites générées en SVG, une composition par catégorie
- * (pas de photos stock) : navy, filets ivoire et accents dorés.
+ * Couvertures abstraites générées en SVG, une composition par catégorie —
+ * utilisées quand un article n'a pas de photo (`cover`) : navy, filets ivoire et accents dorés.
  */
 export function ArticleCover({ category, className }: { category: Category; className?: string }) {
   const uid = useId().replace(/[^a-zA-Z0-9]/g, "");

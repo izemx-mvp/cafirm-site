@@ -1,3 +1,5 @@
+import type { PhotoKey } from "./photos";
+
 export type Category = "fiscalite" | "comptabilite" | "creation" | "investir" | "social";
 
 export const categoryLabels: Record<Category, string> = {
@@ -19,6 +21,8 @@ export interface Post {
   slug: string;
   title: string;
   category: Category;
+  /** Photo de couverture (registre src/data/photos.ts) ; à défaut, visuel SVG de la catégorie */
+  cover?: PhotoKey;
   date: string; // ISO
   readingTime: number;
   featured?: boolean;
@@ -30,6 +34,7 @@ export interface Post {
 export const posts: Post[] = [
   {
     slug: "loi-de-finances-2026-pme-maroc",
+    cover: "articleLoiDeFinances",
     title: "Loi de finances 2026 : ce qui change concrètement pour les PME marocaines",
     category: "fiscalite",
     date: "2026-10-14",
@@ -82,6 +87,7 @@ export const posts: Post[] = [
   },
   {
     slug: "tva-maroc-taux-deductions-pieges",
+    cover: "articleTva",
     title: "TVA au Maroc : taux, droit à déduction et pièges à éviter",
     category: "fiscalite",
     date: "2026-11-03",
@@ -133,6 +139,7 @@ export const posts: Post[] = [
   },
   {
     slug: "creer-une-sarl-au-maroc-2026",
+    cover: "articleSarl",
     title: "Créer une SARL au Maroc en 2026 : étapes, délais et coûts réels",
     category: "creation",
     date: "2026-09-02",
@@ -187,6 +194,7 @@ export const posts: Post[] = [
   },
   {
     slug: "investisseurs-etrangers-7-questions-maroc",
+    cover: "articleInvestisseurs",
     title: "S'implanter au Maroc : les 7 questions que posent tous les investisseurs étrangers",
     category: "investir",
     date: "2026-07-21",
@@ -251,6 +259,7 @@ export const posts: Post[] = [
   },
   {
     slug: "externaliser-sa-comptabilite-pme-maroc",
+    cover: "articleExternaliser",
     title: "Externaliser sa comptabilité : le bon calcul pour une PME marocaine ?",
     category: "comptabilite",
     date: "2026-06-10",
@@ -301,6 +310,7 @@ export const posts: Post[] = [
   },
   {
     slug: "employeur-cnss-amo-ir-maroc",
+    cover: "articleCnss",
     title: "Employeurs : maîtriser la CNSS, l'AMO et l'IR salarial au Maroc",
     category: "social",
     date: "2026-08-18",
